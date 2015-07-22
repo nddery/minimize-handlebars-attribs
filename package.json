@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nddery/minimize-handlebars-attrib.git"
+    "url": "git@github.com:nddery/minimize-handlebars-attribs.git"
   },
   "keywords": [
     "minimize",
@@ -19,5 +19,5 @@
   "bugs": {
     "url": "https://github.com/nddery/minimize-handlebars-attribs/issues"
   },
-  "homepage": "https://github.com/nddery/minimize-handlebars-attrib"
+  "homepage": "https://github.com/nddery/minimize-handlebars-attribs"
 }
