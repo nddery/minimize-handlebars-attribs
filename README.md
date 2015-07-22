@@ -7,7 +7,7 @@ A minimize plugin to handle Handlebars template in element attributes
 
 ```js
 var Minimize  = require('minimize'),
-    hbattribs = require('minimizeHandlebarsAttribs'),
+    hbattribs = require('minimize-handlebars-attribs'),
     minimize  = new Minimize({
       plugins: [ hbattribs.plugin ]
     });

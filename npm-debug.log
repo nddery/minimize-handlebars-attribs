@@ -1,0 +1,90 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.1.10
+3 info using node@v0.10.31
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/nddery/Git/minimizeHandlebarsAttrs/node_modules/minimizeHandlebarsAttribs',
+7 silly cache add   type: 'directory' }
+8 verbose tar pack [ '/Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package.tgz',
+8 verbose tar pack   '/Users/nddery/Git/minimizeHandlebarsAttrs/node_modules/minimizeHandlebarsAttribs' ]
+9 verbose tarball /Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package.tgz
+10 verbose folder /Users/nddery/Git/minimizeHandlebarsAttrs/node_modules/minimizeHandlebarsAttribs
+11 info prepublish minimize-handlebars-attribs@1.0.1
+12 verbose addLocalTarball adding from inside cache /Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package.tgz
+13 silly cache afterAdd minimize-handlebars-attribs@1.0.1
+14 verbose afterAdd /Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package/package.json not in flight; writing
+15 verbose afterAdd /Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package/package.json written
+16 silly publish { name: 'minimize-handlebars-attribs',
+16 silly publish   version: '1.0.1',
+16 silly publish   description: 'A minimize plugin to handle Handlebars template in element attributes',
+16 silly publish   main: 'index.js',
+16 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+16 silly publish   repository:
+16 silly publish    { type: 'git',
+16 silly publish      url: 'git@github.com:nddery/minimizeHandlebarsAttribs.git' },
+16 silly publish   keywords: [ 'minimize', 'handlebars' ],
+16 silly publish   author: { name: 'Nicolas Duvieusart Déry' },
+16 silly publish   license: 'MIT',
+16 silly publish   bugs: { url: 'https://github.com/nddery/minimizeHandlebarsAttribs/issues' },
+16 silly publish   homepage: 'https://github.com/nddery/minimizeHandlebarsAttribs',
+16 silly publish   readme: '# Minimize Handlebars attributes plugin\n\nA minimize plugin to handle Handlebars template in element attributes\n\n## Usage\n**Note: This plugin is not compatible with the `spare` option.**\n\n```js\nvar Minimize  = require(\'minimize\'),\n    hbattribs = require(\'minimizeHandlebarsAttribs\'),\n    minimize  = new Minimize({\n      plugins: [ hbattribs.plugin ]\n    });\n\nvar html = \'<div id="divID" class="my-class your-class" {{#ifCond is true}}selected{{/if}}>A div</div>\';\n\nminimize.parse(html, function(error, data) {\n  // data output: <div id=divID class="my-class your-class" {{#ifcond is true}}selected{{/if}}>A div</div>\n});\n```\n\n## Why ?\n\nMinifing HTML with `minize` will give you valid HTML. But what if when you HTML\ncontains some Handlebars template ? What if you HTML looked like this:\n\n```html\n<select name="preset">\n  {{#forEach presets}}\n    <option {{#ifCond this.key ../model.preset}}selected{{/ifCond}}>\n      {{this.key}}\n    </option>\n  {{/forEach}}\n</select>\n```\n\nAlthough this will produce valid HTML once it\'s parsed by Handlebars, it is not\nvalid HTML at the time of minifying. Here\'s the output from running this through\n`minimize`:\n\n```html\n<select name=preset><option {{#ifcond="" this.key="" ..="" model.preset}}selected{{="" ifcond}}="">{{this.key}}</option></select>\n```\n\nNotice how the Handlebars template is all split up ?\n\nThis plugin attemps to mitigate the issue by re-structuring the tree output from\n`htmlparser2`, which is used by `minimize`. A downside is that **everything will\nbe lowercase\'d**.\n',
+16 silly publish   readmeFilename: 'README.md',
+16 silly publish   gitHead: '4218a16fe236c8f044a1f281d6c87660645fcf24',
+16 silly publish   _id: 'minimize-handlebars-attribs@1.0.1',
+16 silly publish   _shasum: 'ac1727e7e9a7f7a78e9e43c13435b2a8a563c650',
+16 silly publish   _from: '.' }
+17 silly mapToRegistry name minimize-handlebars-attribs
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/minimize-handlebars-attribs
+21 verbose publish registryBase https://registry.npmjs.org/
+22 silly publish uploading /Users/nddery/.npm/minimize-handlebars-attribs/1.0.1/package.tgz
+23 verbose request uri https://registry.npmjs.org/minimize-handlebars-attribs
+24 verbose request sending authorization for write operation
+25 info attempt registry request try #1 at 23:17:18
+26 verbose request using bearer token for auth
+27 verbose request id ccd5bc449389f04c
+28 http request PUT https://registry.npmjs.org/minimize-handlebars-attribs
+29 http 403 https://registry.npmjs.org/minimize-handlebars-attribs
+30 verbose headers { 'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '95',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Wed, 22 Jul 2015 03:17:19 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-served-by': 'cache-iad2138-IAD',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1437535038.600549,VS0,VE644' }
+31 verbose request invalidating /Users/nddery/.npm/registry.npmjs.org/minimize-handlebars-attribs on PUT
+32 error publish Failed PUT 403
+33 verbose stack Error: "You cannot publish over the previously published version 1.0.1." : minimize-handlebars-attribs
+33 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:234:14)
+33 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+33 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:372:22)
+33 verbose stack     at Request.emit (events.js:98:17)
+33 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1317:14)
+33 verbose stack     at Request.emit (events.js:117:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1265:12)
+33 verbose stack     at IncomingMessage.emit (events.js:117:20)
+33 verbose stack     at _stream_readable.js:943:16
+33 verbose stack     at process._tickCallback (node.js:419:13)
+34 verbose statusCode 403
+35 verbose pkgid minimize-handlebars-attribs
+36 verbose cwd /Users/nddery/Git/minimizeHandlebarsAttrs/node_modules/minimizeHandlebarsAttribs
+37 error Darwin 14.4.0
+38 error argv "node" "/usr/local/bin/npm" "publish"
+39 error node v0.10.31
+40 error npm  v2.1.10
+41 error code E403
+42 error "You cannot publish over the previously published version 1.0.1." : minimize-handlebars-attribs
+43 error If you need help, you may report this error at:
+43 error     <http://github.com/npm/npm/issues>
+44 verbose exit [ 1, true ]

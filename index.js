@@ -31,7 +31,7 @@ exports.plugin = {
       }
       node.attribs = newAttribs;
     }
-
-    next();
   }
+
+  next();
 };
