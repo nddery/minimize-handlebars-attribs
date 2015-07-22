@@ -9,7 +9,7 @@ A minimize plugin to handle Handlebars template in element attributes
 var Minimize  = require('minimize'),
     hbattribs = require('minimize-handlebars-attribs'),
     minimize  = new Minimize({
-      plugins: [ hbattribs.plugin ]
+      plugins: [ hbattribs ]
     });
 
 var html = '<div id="divID" class="my-class your-class" {{#ifCond is true}}selected{{/if}}>A div</div>';
