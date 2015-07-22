@@ -4,7 +4,8 @@ exports.element = function element(node, next) {
       newAttribs = {},
       currentKey,
       handlebarsDelimiter,
-      key;
+      key,
+      lastKey;
 
   if (node.attribs) {
     // Find start and end of all Handlebars template in attributes
@@ -21,11 +22,13 @@ exports.element = function element(node, next) {
           currentKey = currentKey + handlebarsDelimiter + key;
           newAttribs[currentKey] = '';
         } else if (inHandlebarsTemplate) {
-          currentKey = currentKey + ' ' + key;
+          // @TODO: there must be a better way...
+          currentKey = currentKey + (lastKey == '..' ? '/' : ' ') + key;
         // Not in an handlebars template, normal attrs, keep pushing
         } else {
           newAttribs[key] = node.attribs[key];
         }
+        lastKey = key;
       }
     }
     node.attribs = newAttribs;
