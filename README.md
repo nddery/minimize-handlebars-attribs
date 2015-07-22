@@ -1,3 +1,5 @@
+**This is currently broken, do not use.**
+
 # Minimize Handlebars attributes plugin
 
 A minimize plugin to handle Handlebars template in element attributes
