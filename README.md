@@ -3,6 +3,8 @@
 A minimize plugin to handle Handlebars template in element attributes
 
 ## Usage
+**Note: This plugin is not compatible with the `spare` option.**
+
 ```js
 var Minimize  = require('minimize'),
     hbattribs = require('minimizeHandlebarsAttribs'),
