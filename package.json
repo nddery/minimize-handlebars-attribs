@@ -1,6 +1,6 @@
 {
   "name": "minimize-handlebars-attribs",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A minimize plugin to handle Handlebars template in element attributes",
   "main": "index.js",
   "scripts": {
