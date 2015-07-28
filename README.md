@@ -54,4 +54,4 @@ This plugin attemps to mitigate the issue by re-structuring the tree output from
 be lowercase'd**.
 
 ## Credits
-[minimize][Swaagie] of Swaagie is used to parse and minify the tree rendered by [node-htmlparser][fb55] of fb55.
+[minimize](https://github.com/Swaagie/minimize) of Swaagie is used to parse and minify the tree rendered by [node-htmlparser](https://github.com/fb55/htmlparser2) of fb55.
