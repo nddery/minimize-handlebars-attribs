@@ -15,12 +15,14 @@ var Minimize  = require('minimize'),
       plugins: [ hbattribs ]
     });
 
-var html = '<div id="divID" class="my-class your-class" {{#ifCond is true}}selected{{/if}}>A div</div>';
+var html = '<div id="divID" class="my-class your-class" {{#ifCond clause ../../isTrue}}selected{{/ifCond}}>A div</div>';
 
 minimize.parse(html, function(error, data) {
-  // data output: <div id=divID class="my-class your-class" {{#ifcond is true}}selected{{/if}}>A div</div>
+  // data output: <div id=divID class="my-class your-class" {{#ifcond clause ../../istrue}}selected{{/ifcond}}>A div</div>
 });
 ```
+
+**Note that everything has been lowercase'd.**
 
 ## Why ?
 
@@ -50,3 +52,6 @@ Notice how the Handlebars template is all split up ?
 This plugin attemps to mitigate the issue by re-structuring the tree output from
 `htmlparser2`, which is used by `minimize`. A downside is that **everything will
 be lowercase'd**.
+
+## Credits
+[minimize][Swaagie] of Swaagie is used to parse and minify the tree rendered by [node-htmlparser][fb55] of fb55.
