@@ -26,7 +26,7 @@ minimize.parse(html, function(error, data) {
 
 ## Why ?
 
-Minifing HTML with `minize` will give you valid HTML. But what if when you HTML
+Minifing HTML with `minize` will give you valid HTML. But what if when your HTML
 contains some Handlebars template ? What if you HTML looked like this:
 
 ```html
@@ -55,3 +55,9 @@ be lowercase'd**.
 
 ## Credits
 [minimize](https://github.com/Swaagie/minimize) of Swaagie is used to parse and minify the tree rendered by [node-htmlparser](https://github.com/fb55/htmlparser2) of fb55.
+
+## Running tests
+```bash
+npm test
+npm run watch
+```
