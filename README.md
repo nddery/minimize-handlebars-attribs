@@ -1,4 +1,4 @@
-# Minimize Handlebars attributes plugin
+# Minimize Handlebars attributes plugin [![Build Status](https://travis-ci.org/nddery/minimize-handlebars-attribs.svg)](https://travis-ci.org/nddery/minimize-handlebars-attribs)
 
 **This is experimental, use in production is not recommended.**
 
